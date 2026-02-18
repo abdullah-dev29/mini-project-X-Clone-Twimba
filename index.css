@@ -59,7 +59,7 @@ textarea{
     line-height: 30px;
 }
 
-button{
+.tweet-btn{
     background-color: #1DA1F2;
     border: none;
     color: white;
@@ -109,7 +109,6 @@ button{
     font-size: 12px;
     font-weight: 500;
     color: #555;
-    margin-top: 0;
 }
 
 .tweet-text{
@@ -117,6 +116,53 @@ button{
     font-size: 14px;
     line-height: 20px;
 }
+
+.delete {
+    width: 300px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    border-radius: 12px;
+    background-color: #E3F4FD;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    display: none;
+}
+
+.delete-post {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+
+.delete-post p{
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+.delete-post button{
+    background-color: #1DA1F2;
+    border: none;
+    color: white;
+    padding: 8px 40px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.tweet-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 
 /* images */
 
