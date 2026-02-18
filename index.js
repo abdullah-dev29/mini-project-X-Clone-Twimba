@@ -12,6 +12,8 @@ document.addEventListener("click", function (e) {
     handleTweetBtnClick();
   } else if (e.target.dataset.delete) {
     handleDeleteIconClick(e.target.dataset.delete);
+  } else if (e.target.dataset.messageReply) {
+    handleReplayBtnClick(e.target.dataset.messageReply)
   }
 });
 
@@ -87,6 +89,24 @@ function handleDeleteIconClick(tweetId) {
   });
 }
 
+function handleReplayBtnClick(tweetId) {
+  const replyInput = document.getElementById(`reply-${tweetId}`)
+  tweetsData.forEach(function(tweet) {
+    if(tweet.uuid === tweetId) {
+      tweet.replies.push(
+        {
+          handle: `@Twimba`,
+          profilePic: `images/scrimbalogo.png`,
+          tweetText: replyInput.value,
+
+        }
+      )
+    }
+  })
+  replyInput.value = ''
+  render()
+}
+
 function getFeedHtml() {
   let feedHtml = ``;
 
@@ -137,6 +157,10 @@ function getFeedHtml() {
             ${deleteIcon}
             </div>
             <p class="tweet-text">${tweet.tweetText}</p>
+            <div class="send-reply">
+            <input type="text" class="reply-field" placeholder="write your comment" id="reply-${tweet.uuid}">
+            <i class="fa-regular fa-paper-plane message" data-message-reply="${tweet.uuid}"></i>
+            </div>
             <div class="tweet-details">
                 <span class="tweet-detail">
                     <i class="fa-regular fa-comment-dots"

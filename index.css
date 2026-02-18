@@ -163,6 +163,25 @@ textarea{
     justify-content: space-between;
 }
 
+.send-reply {
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    gap: 5px;
+}
+input {
+    margin-bottom: 5px;
+    border: 1px solid #555;
+    border-radius: 12px;
+    margin-top: 5px;
+    padding: 0 10px;
+}
+
+.message {
+    color: #1DA1F2;
+    font-size: 14px;
+}
+
 
 /* images */
 
