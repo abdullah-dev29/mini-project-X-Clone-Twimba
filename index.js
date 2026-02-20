@@ -111,23 +111,13 @@ function getFeedHtml() {
   let feedHtml = ``;
 
   tweetsData.forEach(function (tweet) {
-    let deleteIcon = "";
-    if (tweet.isOwner) {
-      deleteIcon = `<i class="fa-regular fa-trash-can" data-delete="${tweet.uuid}"></i>`;
-    } else {
-      deleteIcon = `<i class="fa-solid fa-ellipsis"></i>`;
-    }
-    let likeIconClass = "";
 
-    if (tweet.isLiked) {
-      likeIconClass = "liked";
-    }
+  const deleteIcon = tweet.isOwner ? 
+    `<i class="fa-regular fa-trash-can" data-delete="${tweet.uuid}"></i>`
+    : `<i class="fa-solid fa-ellipsis"></i>`
+  const likeIconClass = tweet.isLiked ? 'liked': ''
 
-    let retweetIconClass = "";
-
-    if (tweet.isRetweeted) {
-      retweetIconClass = "retweeted";
-    }
+  const retweetIconClass = tweet.isRetweeted ? 'retweeted': ''
 
     let repliesHtml = "";
 
